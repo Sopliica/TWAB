@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TWAB.Api", "TWAB\TWAB.Api.csproj", "{6F49CE09-6A03-4485-8231-D84A0EC1B3AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TWAB.Models", "TWAB.Models\TWAB.Models.csproj", "{FBB5DEF1-C7CF-4637-BFB9-F24D8F3871AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F49CE09-6A03-4485-8231-D84A0EC1B3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F49CE09-6A03-4485-8231-D84A0EC1B3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F49CE09-6A03-4485-8231-D84A0EC1B3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F49CE09-6A03-4485-8231-D84A0EC1B3AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBB5DEF1-C7CF-4637-BFB9-F24D8F3871AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB5DEF1-C7CF-4637-BFB9-F24D8F3871AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB5DEF1-C7CF-4637-BFB9-F24D8F3871AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB5DEF1-C7CF-4637-BFB9-F24D8F3871AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7CAE495-C07E-4621-95B2-01D024E2B0E6}
+	EndGlobalSection
+EndGlobal
