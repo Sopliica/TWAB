@@ -122,4 +122,10 @@ public class MongoRepository<TDocument> : IMongoRepository<TDocument>
     {
         return Task.Run(() => _collection.DeleteManyAsync(filterExpression));
     }
+    public async  Task<IEnumerable<TDocument>> FilterByAsync(
+        Expression<Func<TDocument, bool>> filterExpression)
+    {
+        var result = await _collection.FindAsync(filterExpression);
+        return result.ToEnumerable();
+    }
 }

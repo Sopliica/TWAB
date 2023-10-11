@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using TWAB.Api.Db;
+using TWAB.Api.Queries;
 using TWAB.Models.Models;
 
 [ApiController]
@@ -8,10 +10,12 @@ using TWAB.Models.Models;
 public class ProductController : ControllerBase
 {
     private readonly IMongoRepository<Product> _productRepository;
+    private readonly IMediator _mediator;
 
-    public ProductController(IMongoRepository<Product> peopleRepository)
+    public ProductController(IMongoRepository<Product> peopleRepository, IMediator mediator)
     {
         _productRepository = peopleRepository;
+        _mediator = mediator;
     }
 
     [HttpGet("getAllProducts")]
@@ -48,5 +52,12 @@ public class ProductController : ControllerBase
         product.Id = productToUpdate.Id;
 
         _productRepository.ReplaceOne(product);
+    }
+    //////////////cqrs/////////////
+    [HttpGet]
+    public async Task<ActionResult> GetProducts()
+    {
+        var products = await _mediator.Send(new GetProductsQuery());
+        return Ok(products);
     }
 }
