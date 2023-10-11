@@ -1,20 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using TWAB.Api.Db;
 using TWAB.Models.Models;
 
 [ApiController]
 [Route("[controller]")]
-public class SampleController : ControllerBase
+public class ProductController : ControllerBase
 {
     private readonly IMongoRepository<Product> _productRepository;
 
-    public SampleController(IMongoRepository<Product> peopleRepository)
+    public ProductController(IMongoRepository<Product> peopleRepository)
     {
         _productRepository = peopleRepository;
     }
 
+    [HttpGet("getAllProducts")]
+    public List<Product> getAllAsync()
+    {
+        return _productRepository.FilterBy(_ => true).ToList(); 
+    }
     [HttpPost("registerProduct")]
-    public async Task AddPerson(Product product)
+    public async Task AddProduct(Product product)
     {
         await _productRepository.InsertOneAsync(product);
     }
@@ -29,17 +35,18 @@ public class SampleController : ControllerBase
         return people;
     }
 
-    /*[HttpDelete("deleteProductData")]
-    public void DeletePerson()
+    [HttpDelete("deleteProductData")]
+    public void DeletePerson(string id)
     {
-        _productRepository.DeleteOne();
-    }*/
+        _productRepository.DeleteByIdAsync(id);
+    }
 
     [HttpPut("updateProductData")]
     public void UpdateProduct(Product product, string id)
     {
+        var productToUpdate = _productRepository.FindById(id);
+        product.Id = productToUpdate.Id;
 
         _productRepository.ReplaceOne(product);
     }
-    
 }
