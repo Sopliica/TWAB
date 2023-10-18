@@ -3,7 +3,4 @@ using TWAB.Models.Models;
 
 namespace TWAB.Api.Queries;
 
-public class GetProductsQuery : IRequest<IEnumerable<Product>>
-{
-
-}
+public record GetProductsQuery() : IRequest<IEnumerable<Product>>;
