@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TWAB.Api", "TWAB\TWAB.Api.c
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TWAB.Models", "TWAB.Models\TWAB.Models.csproj", "{FBB5DEF1-C7CF-4637-BFB9-F24D8F3871AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TWAB.Frontend", "TWAB.Frontend\TWAB.Frontend.csproj", "{47924779-83F5-4A66-99F1-F1EBAD6B8DE3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{FBB5DEF1-C7CF-4637-BFB9-F24D8F3871AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBB5DEF1-C7CF-4637-BFB9-F24D8F3871AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBB5DEF1-C7CF-4637-BFB9-F24D8F3871AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47924779-83F5-4A66-99F1-F1EBAD6B8DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47924779-83F5-4A66-99F1-F1EBAD6B8DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47924779-83F5-4A66-99F1-F1EBAD6B8DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47924779-83F5-4A66-99F1-F1EBAD6B8DE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

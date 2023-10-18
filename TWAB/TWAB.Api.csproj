@@ -17,4 +17,8 @@
     <ProjectReference Include="..\TWAB.Models\TWAB.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>

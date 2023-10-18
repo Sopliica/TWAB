@@ -4,6 +4,7 @@ using MongoDB.Bson;
 using TWAB.Api.Commands;
 using TWAB.Api.Db;
 using TWAB.Api.Queries;
+using TWAB.Api.Services;
 using TWAB.Models.Models;
 
 [ApiController]
@@ -12,11 +13,16 @@ public class ProductController : ControllerBase
 {
     private readonly IMongoRepository<Product> _productRepository;
     private readonly IMediator _mediator;
+    private readonly ProductService _productService;
 
-    public ProductController(IMongoRepository<Product> peopleRepository, IMediator mediator)
+    public ProductController(
+        IMongoRepository<Product> peopleRepository,
+        IMediator mediator,
+        ProductService productService)
     {
         _productRepository = peopleRepository;
         _mediator = mediator;
+        _productService = productService;
     }
 
    /* [HttpGet("getAllProducts")]
@@ -80,5 +86,14 @@ public class ProductController : ControllerBase
     {
         await _mediator.Send(new UpdateProductCommand(product, id));
         return StatusCode(204); 
+    }
+    [HttpGet("Janusz")]
+    public async Task Magia()
+    {
+        var products = await _productService.GetAllProducts();
+        foreach (var p in products)
+        {
+            _productRepository.InsertOne(p);
+        }
     }
 }
